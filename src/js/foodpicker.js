@@ -44,7 +44,11 @@ populateThemeLocal();
 
 // створення розмітки
 
-function createMenuCardsMarkup(menu) {
-  // return menu.map(menuCardTpl(menu)).join('');
-  return menu.map(menuCardTpl).join('');
-}
+// function createMenuCardsMarkup(menu) {
+//   // return menu.map(menuCardTpl(menu)).join('');
+//   return menu.map(menuCardTpl).join('');
+// }
+const menuContainer = document.querySelector('.js-menu');
+const menuMarkup = menuCardTpl(menu);
+
+menuContainer.insertAdjacentHTML('beforeend', menuMarkup);

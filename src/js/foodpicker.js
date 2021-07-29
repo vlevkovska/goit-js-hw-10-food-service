@@ -13,7 +13,8 @@ const refs = {
   bodyTheme: document.querySelector('body'),
 };
 
-refs.bodyTheme.classList.add(Theme.LIGHT);
+// refs.bodyTheme.classList.add(Theme.LIGHT);
+refs.bodyTheme.classList.remove(Theme.DARK);
 refs.themeSwitch.addEventListener('change', onChangeTheme);
 
 // тема по-умолчанию
@@ -21,6 +22,7 @@ function onChangeTheme(event) {
   if (!refs.bodyTheme.classList.contains(Theme.DARK)) {
     localStorage.setItem(SWITCH_TOGGLE, Theme.DARK);
     refs.bodyTheme.classList.add(Theme.DARK);
+    refs.bodyTheme.classList.remove(Theme.LIGHT);
   } else if (refs.bodyTheme.classList.contains(Theme.DARK)) {
     localStorage.setItem(SWITCH_TOGGLE, Theme.LIGHT);
     refs.bodyTheme.classList.remove(Theme.DARK);
